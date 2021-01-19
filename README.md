@@ -28,7 +28,6 @@ Example：
 ```
 aacaacabcaba ==> 011110000111110001001000110001101001
 ```
-
 #### Lempel-Ziv-Storer-Szymanski (LZSS) decoder
 a variation of the LZ77 algorithm.
 
