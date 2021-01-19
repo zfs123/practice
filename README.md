@@ -24,7 +24,7 @@ input characters will have ASCII values < 128).
    - Then encode the length of the Huffman code assigned to that unique character using an Elias ω code.
    - To the above, append the variable-length Huffman codeword assigned to that unique character.
 
-Example：`aacaacabcaba ==》011110000111110001001000110001101001`
+Example：`aacaacabcaba ==> 011110000111110001001000110001101001`
 
 #### Lempel-Ziv-Storer-Szymanski (LZSS) decoder
 a variation of the LZ77 algorithm.
@@ -32,6 +32,6 @@ a variation of the LZ77 algorithm.
 Example: 
 ```
 01111000011111000100100011000110100100011111111010011000100100001101111
-===>
+==>
 aacaacabcaba
 ```
