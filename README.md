@@ -2,19 +2,25 @@
 
 #### Miller-Rabin algorithm
 Program name: `genPrime.py`
+
 Argument to your program: `m`
+
 Command line usage of your script: `genPrime.py <m>`
+
 Output: Output to terminal the value of prime `n` in decimal (which would take m-bits to represent in binary).
+
 Example: m = 4, the program will output either 11 or 13.
 
 #### Huffman algorithm
 Program name: `header.py`
+
 Argument to your program: An input text file containing a string str[0 . . . nn1]. It is safe to assume that:
 - str consists of ASCII characters (characters are not restricted to be lower case
 only!).
 - There are no line breaks in the input file.
 
 Command line usage of your script: `header.py <input text file>`
+
 Output format: The output is a text file containing a header for the input string str. The header is a bitstring (see the note above which details how to represent the bits) made up of the following information:
  - The number of unique ASCII characters in str encoded using the corresponding
 Elias ω integer code.
