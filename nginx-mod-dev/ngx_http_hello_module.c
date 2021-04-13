@@ -21,7 +21,7 @@ static ngx_int_t ngx_http_hello_handler(ngx_http_request_t *r);
 /* This module provided directive: hello on/off; */
 static ngx_command_t ngx_http_hello_commands[] = {
     { ngx_string("hello"),
-	  NGX_HTTP_LOC_CONF|NGX_CONF_TAKE1,
+	  NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_TAKE1,
 	  ngx_conf_set_flag_slot,
 	  NGX_HTTP_LOC_CONF_OFFSET,
 	  offsetof(ngx_http_hello_loc_conf_t, on),
@@ -45,7 +45,7 @@ static ngx_http_module_t ngx_http_hello_module_ctx = {
     NULL, /* merge server configuration */
 
     ngx_http_hello_create_loc_conf,          /* create location configuration */
-    NULL           /* merge location configuration */
+	ngx_http_hello_merge_loc_conf            /* merge location configuration */
 };
 
 static void *
@@ -58,6 +58,17 @@ ngx_http_hello_create_loc_conf(ngx_conf_t *cf)
     }
 	conf->on = NGX_CONF_UNSET;
 	return conf;
+}
+
+static char *
+ngx_http_hello_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
+{
+	ngx_http_hello_loc_conf_t  *prev = parent;
+    ngx_http_hello_loc_conf_t  *conf = child;
+
+	ngx_conf_merge_value(conf->on, prev->on, 0);
+
+	return NGX_CONF_OK;
 }
 
 /* Module definition. */

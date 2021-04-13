@@ -8,7 +8,7 @@
    2. Build Nginx as usual with `make`.
    
    3. Configure the module. The directive is `hello`
-      that is supported in the **location** context only.
+      that is supported in the **server** and **location** context only.
       
       Example:
           
